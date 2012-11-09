@@ -23,7 +23,8 @@ class FulgurioTablePrefixExtension extends Extension
 		$config = $this->processConfiguration($configuration, $configs);
 		$loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
 		$loader->load('services.yml');
-		if ($config['prefix']) {
+		if (isset($config['prefix']))
+		{
 			$container->setParameter('fulgurio_table_prefix_bundle.db.table_prefix', $config['prefix']);
 		}
 	}

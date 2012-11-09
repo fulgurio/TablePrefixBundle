@@ -21,9 +21,8 @@ class Configuration implements ConfigurationInterface
 		$rootNode = $treeBuilder->root('fulgurio_table_prefix');
 		$rootNode
 			->children()
-				->scalarNode('prefix')->defaultValue("fulgurio_table_prefix_bundle.db.table_prefix")->end()
+				->scalarNode('prefix')->end()
 				->end();
-
 		return $treeBuilder;
 	}
 }
