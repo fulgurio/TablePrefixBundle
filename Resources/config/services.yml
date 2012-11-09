@@ -1,0 +1,9 @@
+parameters:
+    fulgurio_table_prefix_bundle.db.table_prefix: fulgurio_
+
+services:
+    fulgurio_table_prefix_bundle.tblprefix_subscriber:
+        class: Fulgurio\TablePrefixBundle\Subscriber\TablePrefixSubscriber
+        arguments: [%fulgurio_table_prefix_bundle.db.table_prefix%]
+        tags:
+            - { name: doctrine.event_subscriber }
